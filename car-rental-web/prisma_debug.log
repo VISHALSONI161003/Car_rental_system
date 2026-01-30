@@ -1,0 +1,15 @@
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Error: Prisma schema validation - (get-dmmf wasm)
+Error code: P1012
+error: Type "boolean" is neither a built-in type, nor refers to another model, composite type, or enum. Did you mean "Boolean"?
+  -->  prisma\schema.prisma:27
+   | 
+26 |   basePricePerDay Float
+27 |   isAvailable     boolean  @default(true)
+   | 
+
+Validation Error Count: 1
+[Context: getDmmf]
+
+Prisma CLI Version : 5.19.1

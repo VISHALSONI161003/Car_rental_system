@@ -1,0 +1,9 @@
+Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.\nError: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+    at new PrismaClient (D:\Car_rental_project\car-rental-web\node_modules\.prisma\client\default.js:43:11)
+    at Object.<anonymous> (D:\Car_rental_project\car-rental-web\diagnose.js:7:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49

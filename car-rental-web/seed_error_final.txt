@@ -1,0 +1,19 @@
+Start seeding ...
+PrismaClientKnownRequestError: 
+Invalid `prisma.car.create()` invocation in
+D:\Car_rental_project\car-rental-web\prisma\seed.js:21:45
+
+  18 async function main() {
+  19     console.log('Start seeding ...');
+  20     for (const car of initialCars) {
+ΓåÆ 21         const createdCar = await prisma.car.create(
+The table `main.Car` does not exist in the current database.
+    at Ln.handleRequestError (D:\Car_rental_project\car-rental-web\src\generated\client\runtime\library.js:121:7753)
+    at Ln.handleAndLogRequestError (D:\Car_rental_project\car-rental-web\src\generated\client\runtime\library.js:121:7061)
+    at Ln.request (D:\Car_rental_project\car-rental-web\src\generated\client\runtime\library.js:121:6745)
+    at async l (D:\Car_rental_project\car-rental-web\src\generated\client\runtime\library.js:130:9633)
+    at async main (D:\Car_rental_project\car-rental-web\prisma\seed.js:21:28) {
+  code: 'P2021',
+  clientVersion: '5.19.1',
+  meta: { modelName: 'Car', table: 'main.Car' }
+}

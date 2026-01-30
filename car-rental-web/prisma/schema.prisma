@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  rentals   Rental[]
+}
+
+model Car {
+  id              String   @id @default(cuid())
+  brand           String
+  model           String
+  basePricePerDay Float
+  isAvailable     Boolean  @default(true)
+  imageUrl        String?
+  
+  rentals         Rental[]
+}
+
+model Rental {
+  id         String   @id @default(cuid())
+  startDate  DateTime @default(now())
+  endDate    DateTime? // Nullable if currently rented
+  rentalDays Int
+  totalCost  Float
+  status     String   @default("ACTIVE") // ACTIVE, COMPLETED, CANCELLED
+  
+  carId      String
+  car        Car      @relation(fields: [carId], references: [id])
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
